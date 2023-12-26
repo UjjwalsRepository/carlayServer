@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-const carSchema=new mongoose.Schema({
+const adminCarSchema=new mongoose.Schema({
    
     fuelType:{
         type:String,
-        // required:true
+        required:true
     }
     ,
     transmission:{
@@ -32,33 +32,38 @@ const carSchema=new mongoose.Schema({
     ,
     kilometer:{
         type:Number,
-        // required:true
-    },
-    insuranceEndDate:{
-        type:Date,
         required:true
     },
-    firstName:{
-        type:String,
-        required:true
-    },
-    lastName:{
-        type:String,
-        required:true
-    },
-    mobile:{
+    expectedPrice:{
         type:Number,
-        // required:true
-    },
-    email:{
-        type:String,
         required:true
     }
-    // rcImage:{
+    ,
+    manufacturer:{
+        type:String,
+        required:true
+    },
+    variant:{
+        type:String,
+        required:true
+    },
+    mfgYear:{
+        type:Number,
+        required:true
+    },
+    ownership:{
+        type:Number,
+        required:true
+    },
+    regState:{
+        type:String,
+        required:true
+
+    },
+    // fullImage:{
     //     data:Buffer,
     //     type:String,
-    //     required:true
-    // },
+    // }
     // frontImage:{
     //     data:Buffer,
     //     type:String,
@@ -97,4 +102,4 @@ const carSchema=new mongoose.Schema({
     
 })
 
-export default mongoose.model("Car",carSchema)
+export default mongoose.model("AdminCar",adminCarSchema)

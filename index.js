@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import route from './routes/carRoute.js';
+import adminRoute from './routes/adminRoute.js';
 
 const app=express();
 
@@ -11,6 +12,11 @@ app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
 
+app.use(
+    express.urlencoded({ extended: true })
+);
+    
+app.use(express.json());
 
 const URL="mongodb+srv://ujjwal:ujjwal2023@mycluster.bed59i8.mongodb.net/carlay?retryWrites=true&w=majority"
 // const PORT=process.env.PORT || 7000;
@@ -26,3 +32,4 @@ mongoose.connect(URL)
 }).catch((error)=>console.log(error))
 
 app.use('/api',route)
+app.use('/adminapi',adminRoute)

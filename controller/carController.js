@@ -16,17 +16,17 @@ export const create=async(req,res)=>{
     }
 }
 
-// export const getAll=async(req,res)=>{
-//     try {
-//         const userData=await User.find();
-//         if(!userData){
-//             return res.status(404).json({msg:"user data not found"});
-//         }
-//         res.status(200).json(userData);
-//     } catch (error) {
-//         res.status(500).json({error:error})
-//     }
-// } 
+export const getAllCar=async(req,res)=>{
+    try {
+        const carData=await Car.find();
+        if(!carData){
+            return res.status(404).json({msg:"user data not found"});
+        }
+        res.status(200).json(carData);
+    } catch (error) {
+        res.status(500).json({error:error})
+    }
+} 
 
 // export const getOne=async(req,res)=>{
 //     try {
